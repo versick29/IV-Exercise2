@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/style.css')}}">
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script   src="{{url_for('static',filename='js/scatterplot.js')}}"></script>
 
 
 </head>
@@ -15,7 +16,7 @@
 <div class ='title_div'>
 <h1>InfoVis UE 2024 - Exercise 2</h1>
 <p>Allkanjari Eris (12347524)</p>
-<p>Nestoras Athanasios ()</p>
+<p>Nestoras Athanasios (12347559)</p>
 </div>
 
 <div id="main_container" class="main_container">
@@ -27,15 +28,19 @@
     </div>
     <div class="container">
         <p>&nbsp;</p>
-        <svg id="svg_chart"></svg>
+        <svg id="svg_scatterplot"></svg>
     </div>
 
 
 
 
-<script>
+<script >
+
     let data = {{ data | safe }};
     console.log(data);
+    console.log(data.scaledPcaTeam);
+     buildScatterplot(data.scaledPcaTeam);
+
 </script>
 
 <div id="svg_line_plot" class="svg_line_plot"></div>
