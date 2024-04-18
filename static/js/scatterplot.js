@@ -74,10 +74,11 @@ let buildScatterplot = (data) => {
         .enter()
         .append("circle")
         .attr("cx", function (d) {
-            return d;
+            console.log(d)
+            return d[0];
         })
         .attr("cy", function (d) {
-            return d;
+            return d[1];
         })
         .attr("r", 5)
         .style("fill", function (d) {

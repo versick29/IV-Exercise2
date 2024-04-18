@@ -19,10 +19,8 @@ def get_pca_columns(all_team_columns):
 
 
 def scale_numeric_values(data):
-    # create two DataFrames, one for each data type
-    removed_columns_data = data[get_pca_columns(data.columns)]
+
+    filtered_columns_data = data[get_pca_columns(data)]
 
     scaler = StandardScaler().set_output(transform='pandas')
-
-    # imp = SimpleImputer(missing_values=np.nan, strategy='mean')
-    return scaler.fit_transform(removed_columns_data)
+    return scaler.fit_transform(filtered_columns_data)

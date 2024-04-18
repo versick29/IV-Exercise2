@@ -36,10 +36,10 @@
 
 <script >
 
-    let data = {{ data | safe }};
-    console.log(data);
-    console.log(data.scaledPcaTeam);
-     buildScatterplot(data.scaledPcaTeam);
+    let scaledPcaTeam = {{ scaledPcaTeam  }};
+    console.log(scaledPcaTeam);
+
+     buildScatterplot(scaledPcaTeam);
 
 </script>
 
