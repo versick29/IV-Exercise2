@@ -7,9 +7,7 @@ def get_data_as_json(data_folder, file_name):
 
 
 def get_pca_columns(all_team_columns):
-    column_to_skip = ['id', 'player_id', 'season', 'name', 'full_name',
-                      'position', 'birth_date', 'birth_place',
-                      'height', 'player_url', 'text', 'teams', 'team_name']
+    column_to_skip = ['id', 'player_id', 'team_name']
     pca_team_columns = []
     for c in list(all_team_columns):
         if c not in column_to_skip:

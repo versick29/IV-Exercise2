@@ -18,17 +18,12 @@ DATA_FOLDER = 'static/data/'
 def data():
     # 1. Get data from the csv files and pass them to the client
     player_data = get_data_as_json(DATA_FOLDER, "playerData.csv").head(n=40)
-    dict = {}
-    for d in player_data:
-        dict[d] = list(player_data[d])
-
-    test_data = player_data.from_dict(dict)
 
     team_data = get_data_as_json(DATA_FOLDER, "teamData.csv")
     cleaned_player_data = get_data_as_json(DATA_FOLDER, "cleanedPlayerData.csv")
 
     # 2. Calculate PCA
-    scaled_team_data = scale_numeric_values(test_data)
+    scaled_team_data = scale_numeric_values(team_data)
     scaled_pca_team = PCA(n_components=2).fit_transform(scaled_team_data)
 
     # data to be sent to the client if neededF
