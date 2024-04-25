@@ -37,9 +37,17 @@ def data():
     scaled_pca_team_as_string = repr(scaled_pca_team).strip('array][')
     scaled_pca_team_2d = ast.literal_eval(scaled_pca_team_as_string)
 
+    # Create a list of objects for scatterplot data
+    scatter_plot_data = []
+    for i in range(len(scaled_pca_team_2d)):
+        obj = {"id": int(team_data.loc[i, 'team_id']),
+               "x": scaled_pca_team_2d[i][0],
+               "y": scaled_pca_team_2d[i][1]}
+        scatter_plot_data.append(obj)
+
     # return the index file and the data
     return render_template("index.html", playerData=player_data, teamData=team_data,
-                           playerDataFor36=cleaned_player_data, scaledPcaTeam=scaled_pca_team_2d)
+                           playerDataFor36=cleaned_player_data, scatterPlotData=scatter_plot_data)
 
 
 if __name__ == '__main__':

@@ -37,10 +37,10 @@
 
 <script >
 
-    let scaledPcaTeam = {{ scaledPcaTeam  }};
-    console.log(scaledPcaTeam);
+    let scatterPlotData = {{ scatterPlotData | safe  }};
+    console.log(scatterPlotData);
 
-     buildScatterplot(scaledPcaTeam);
+     buildScatterplot(scatterPlotData);
 
 </script>
 
