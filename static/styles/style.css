@@ -26,3 +26,8 @@ body {
     height: 15em;
     width: 20em;
 }
+
+#svg_heatmap {
+    height: 20em;
+    width: 20em;
+}

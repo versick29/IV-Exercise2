@@ -8,6 +8,7 @@
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script   src="{{url_for('static',filename='js/scatterplot.js')}}"></script>
+    <script   src="{{url_for('static',filename='js/heatmap.js')}}"></script>
 
 
 </head>
@@ -20,16 +21,22 @@
 </div>
 
 <div id="main_container" class="main_container">
+     <div class="container">
+        <p>&nbsp;</p>
+        <svg id="svg_heatmap"></svg>
+    </div>
+     <div class="container">
+        <p>&nbsp;</p>
+        <svg id="svg_scatterplot"></svg>
+    </div>
     <div class="container">
     <svg id="svg_table"></svg>
         <p>&nbsp;</p>
         <label>Indicator:</label>
         <select id="indicator_change" class="dropdown" onchange="changeIndicator(this)"></select>
     </div>
-    <div class="container">
-        <p>&nbsp;</p>
-        <svg id="svg_scatterplot"></svg>
-    </div>
+
+
 
 
 
@@ -38,9 +45,13 @@
 <script >
 
     let scatterPlotData = {{ scatterPlotData | safe  }};
-    console.log(scatterPlotData);
+
+    let teamData = {{ teamData | safe  }};
+    console.log(teamData);
 
      buildScatterplot(scatterPlotData);
+          buildHeatMap(teamData);
+
 
 </script>
 
