@@ -6,7 +6,7 @@ let buildScatterplot = (data) => {
         height = 250 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-    const svg = d3.select("#svg_scatterplot")
+    const svg = d3.select("#svg-scatterplot")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)

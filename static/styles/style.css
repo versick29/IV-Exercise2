@@ -22,12 +22,15 @@ body {
     opacity: 0.0;
 }
 
-#svg_scatterplot {
+#svg-scatterplot {
     height: 15em;
     width: 20em;
 }
 
-#svg_heatmap {
-    height: 20em;
-    width: 20em;
+#svg-heatmap {
+    height: 25em;
+    width: 38em;
+    padding-left: 1em;
 }
+
+
